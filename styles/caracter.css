@@ -1,4 +1,15 @@
 .caracter__p{
     font-size: 10em;
-    font-weight: bold;
+    /* font-weight: bold; */
+}
+
+.btn-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-container .button-primary{
+    text-transform: uppercase;
 }

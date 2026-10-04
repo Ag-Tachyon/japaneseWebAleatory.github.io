@@ -32,7 +32,7 @@
 
   /* Radios de borde */
   --token-radius-sm:   4px;
-  --token-radius-md:   8px;
+  --token-radius-md:   5px;
   --token-radius-lg:   16px;
   --token-radius-full: 9999px;
 
@@ -100,18 +100,18 @@
 body {
   background-color: var(--color-body-bg);
   color: var(--color-text-secondary);
-  font-family: var(--Google-sans-flex);
+  font-family: var(--noto-jp);
   line-height: 1.6;
   margin: 0;
   padding: var(--token-space-xl);
+  padding: 0;
+  margin: 0;
+}
 
+main{
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-
-  padding: 0;
-  margin: 0;
 }
 
 /* Títulos con el contraste más alto */
@@ -143,6 +143,7 @@ a:hover {
 /* Componente: Botón Principal */
 .button-primary {
   background-color: var(--btn-bg);
+  font-family: var(--noto-jp);
   color: var(--btn-text);
   padding: var(--btn-padding);
   border-radius: var(--btn-radius);
