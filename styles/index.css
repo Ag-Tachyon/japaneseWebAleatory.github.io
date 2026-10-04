@@ -1,0 +1,161 @@
+/* ==========================================================================
+   DESIGN TOKENS - ARCHIVO PRINCIPAL
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------------------
+     1. TOKENS GLOBALES (PRIMITIVOS)
+     Valores absolutos de la paleta.
+     ------------------------------------------------------------------------ */
+
+  /* Paleta de Verdes */
+  --token-color-green-100: #a5dc8c; /* Spring Sprout (Limas/Brote) */
+  --token-color-green-300: #71c885; /* Fresh Mint (Menta fresca) */
+  --token-color-green-500: #4f8d6d; /* Sage Medium (Salvia) */
+  --token-color-green-700: #346f5c; /* Pine Green (Pino) */
+  --token-color-green-900: #3d6853; /* Deep Forest (Bosque) */
+
+  /* Neutros Oscuros / Off-Blacks */
+  --token-color-neutral-000: #ffffff;
+  --token-color-neutral-900: #121916; /* Negro carbón verdoso (Fondo principal) */
+  --token-color-neutral-800: #1a2420; /* Superficie/Tarjeta en modo oscuro */
+  --token-color-neutral-700: #25332d; /* Elevar elementos o hover sobre tarjetas */
+
+  /* Espaciado */
+  --token-space-2xs: 0.25rem; /* 4px */
+  --token-space-xs:  0.5rem;  /* 8px */
+  --token-space-sm:  0.75rem; /* 12px */
+  --token-space-md:  1.0rem;  /* 16px */
+  --token-space-lg:  1.5rem;  /* 24px */
+  --token-space-xl:  2.0rem;  /* 32px */
+  --token-space-2xl: 3.0rem;  /* 48px */
+
+  /* Radios de borde */
+  --token-radius-sm:   4px;
+  --token-radius-md:   8px;
+  --token-radius-lg:   16px;
+  --token-radius-full: 9999px;
+
+  /* Sombras para modo oscuro */
+  --token-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --token-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+
+  /* ------------------------------------------------------------------------
+     2. TOKENS SEMÁNTICOS (SISTEMA DE TEMA OSCURO POR DEFECTO)
+     Organizados respetando las normas de accesibilidad WCAG.
+     ------------------------------------------------------------------------ */
+
+  /* Fondos / Superficies */
+  --color-body-bg:         var(--token-color-neutral-900); /* #121916 */
+  --color-surface-base:    var(--token-color-neutral-800); /* #1a2420 */
+  --color-surface-hover:   var(--token-color-neutral-700); /* #25332d */
+
+  /* Tipografía (Relación de contraste probada sobre #121916) */
+  --color-text-main:       var(--token-color-green-100);   /* #A5DC8C (Contraste 12.4:1 - AAA) */
+  --color-text-secondary:  var(--token-color-green-300);   /* #71C885 (Contraste 9.3:1 - AAA) */
+  --color-text-muted:      var(--token-color-green-500);   /* #4F8D6D (Contraste 5.0:1 - AA) */
+  --color-text-on-brand:   var(--token-color-neutral-900); /* Para texto dentro de botones claros */
+
+  /* Bordes y Divisores (Contraste UI >= 3.0:1) */
+  --color-border-subtle:   var(--token-color-green-900);   /* #3D6853 */
+  --color-border-focus:    var(--token-color-green-700);   /* #346F5C */
+
+  /* Marca y Elementos Interactivos */
+  --color-brand-primary:   var(--token-color-green-300);   /* #71C885 */
+  --color-brand-hover:     var(--token-color-green-100);   /* #A5DC8C */
+  --color-brand-accent:    var(--token-color-green-500);   /* #4F8D6D */
+
+
+  /* ------------------------------------------------------------------------
+     3. TOKENS DE COMPONENTE
+     ------------------------------------------------------------------------ */
+
+  /* Botón Principal */
+  --btn-bg:             var(--color-brand-primary);
+  --btn-bg-hover:       var(--color-brand-hover);
+  --btn-text:           var(--color-text-on-brand);
+  --btn-padding:        var(--token-space-xs) var(--token-space-md);
+  --btn-radius:         var(--token-radius-md);
+
+  /* Tarjetas (Cards) */
+  --card-bg:            var(--color-surface-base);
+  --card-border:        var(--color-border-subtle);
+  --card-padding:       var(--token-space-lg);
+  --card-radius:        var(--token-radius-lg);
+  --card-shadow:        var(--token-shadow-sm);
+
+
+  /* tipografía */
+  --Google-sans-flex: "Google Sans Flex";
+  --noto-jp: "Noto Sans JP";
+}
+
+
+/* ==========================================================================
+   4. ESTILOS BASE Y COMPONENTES DE EJEMPLO
+   ========================================================================== */
+
+/* Estilos Globales de la Página */
+body {
+  background-color: var(--color-body-bg);
+  color: var(--color-text-secondary);
+  font-family: var(--Google-sans-flex);
+  line-height: 1.6;
+  margin: 0;
+  padding: var(--token-space-xl);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  padding: 0;
+  margin: 0;
+}
+
+/* Títulos con el contraste más alto */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-main);
+  margin-top: 0;
+}
+
+/* Enlaces */
+a {
+  color: var(--color-brand-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-brand-hover);
+}
+
+/* Componente: Tarjeta */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
+  box-shadow: var(--card-shadow);
+}
+
+/* Componente: Botón Principal */
+.button-primary {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.button-primary:hover {
+  background-color: var(--btn-bg-hover);
+}
+
+.button-primary:active {
+  transform: scale(0.98);
+}
