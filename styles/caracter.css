@@ -5,11 +5,27 @@
 
 .btn-container{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+}
+
+.btn-container .button-primary,
+.btn-container .button-second{
+    text-transform: uppercase;
+}
+
+.caracter__container{
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
 
-.btn-container .button-primary{
-    text-transform: uppercase;
+.caracter__container .romaji-p{
+    font-size: 1.5625rem;
+}
+
+.caracter__container .romaji-p.hidden{
+    visibility: hidden;
 }

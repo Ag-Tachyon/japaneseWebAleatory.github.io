@@ -153,10 +153,28 @@ a:hover {
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.button-primary:hover {
+.button-primary:hover{
   background-color: var(--btn-bg-hover);
 }
 
-.button-primary:active {
+.button-primary:active,
+.button-second:active {
   transform: scale(0.98);
+}
+
+.button-second{
+  background-color: transparent;
+  border: thin solid var(--btn-bg);
+  padding: var(--btn-padding);
+  color: var(--btn-bg);
+  font-family: var(--noto-jp);
+  border-radius: var(--btn-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  cursor: pointer;
+}
+
+.button-second:hover{
+  opacity: .8;
 }
