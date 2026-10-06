@@ -1,21 +1,24 @@
 .info__container{
-    width: 40%;
+    width: min(92%, 40rem);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .caracter__p{
-    font-size: 10em;
-    /* font-weight: bold; */
+    font-size: clamp(5rem, 22vw, 10rem);
+    line-height: 1;
 }
 
 .btn-container{
+    flex-wrap: wrap;
+    justify-content: center;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1.25rem;
-    padding-bottom: 2em;
+    padding: 2em;
 }
 
 .btn-container .button-primary,
