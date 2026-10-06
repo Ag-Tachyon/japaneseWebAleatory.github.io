@@ -33,7 +33,7 @@
   /* Radios de borde */
   --token-radius-sm:   4px;
   --token-radius-md:   5px;
-  --token-radius-lg:   16px;
+  --token-radius-lg:   14px;
   --token-radius-full: 9999px;
 
   /* Sombras para modo oscuro */
@@ -45,6 +45,8 @@
      2. TOKENS SEMÁNTICOS (SISTEMA DE TEMA OSCURO POR DEFECTO)
      Organizados respetando las normas de accesibilidad WCAG.
      ------------------------------------------------------------------------ */
+
+  --tags-radius: var(--token-radius-lg);
 
   /* Fondos / Superficies */
   --color-body-bg:         var(--token-color-neutral-900); /* #121916 */

@@ -1,0 +1,51 @@
+.filters__container{
+    /* background-color: rebeccapurple; */
+    width: 80%;
+    border-top: solid thin var(--color-border-subtle);
+
+}
+
+.filters__logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .9375em;
+    box-sizing: border-box;
+
+    color: var(--token-color-green-100);
+}
+
+.filters__checkbox-container{
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.125em;
+}
+
+.filters__label{
+    border: solid thin #2c3b33;
+    color: #8fa89a;
+    font-family: var(--Google-sans-flex);
+    padding: .8em;
+    font-size: .75em;
+    font-weight: 600;
+    text-align: center;
+    border-radius: var(--tags-radius);
+    cursor: pointer;
+
+    position: relative;
+}
+
+.filters__input{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none; /* evita que reciba clics directos. No pasa nada, porque como el input está dentro del <label>, al hacer clic en el span el navegador lo marca igualmente. */
+}
+
+.filters__label:has(.filters__input:checked),
+.filters__label:has(.filters__input:focus-visible){
+    background-color: #1f3a2a;
+    border-color: #6dbf7b;
+    color: #a9e0b4;
+}
