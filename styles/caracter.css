@@ -6,7 +6,7 @@
 }
 
 .caracter__p{
-    font-size: clamp(5rem, 22vw, 10rem);
+    font-size: clamp(8rem, 45vw, 14rem);
     line-height: 1;
 }
 
