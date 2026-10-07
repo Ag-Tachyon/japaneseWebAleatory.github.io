@@ -71,7 +71,8 @@
         width: 100%;
     }
     .filters__label{
-        padding: .5rem .85rem;
+        padding: 0rem .5rem;
+        font-size: .75rem;
     }
 }
 
