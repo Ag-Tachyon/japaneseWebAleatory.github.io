@@ -24,8 +24,14 @@
 
     transition: all .2s;
 
-    /* visibility: hidden; */
-    /* height: 0; */
+}
+
+.filters__checkbox-container.active{
+    visibility: hidden;
+    transform: scaleY(0);
+    transform-origin: top;
+    /* display: none; */
+    
 }
 
 .filters__label{
@@ -67,4 +73,12 @@
     .filters__label{
         padding: .5rem .85rem;
     }
+}
+
+.icon-arrow{
+    transition: all .2s;
+}
+
+.icon-arrow.active{
+    transform: rotate(-90deg);
 }
