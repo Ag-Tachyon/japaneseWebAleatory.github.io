@@ -27,8 +27,8 @@
 }
 
 .filters__checkbox-container.active{
-    visibility: hidden;
-    transform: scaleY(0);
+    /* visibility: hidden; */
+    flex-grow: 0;
     transform-origin: top;
     /* display: none; */
     
