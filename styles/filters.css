@@ -21,16 +21,17 @@
     align-items: center;
     justify-content: center;
     gap: clamp(.5rem, 2.5vw, 1.125rem);
-
+    /* height: 0; */
+    overflow: hidden;
     transition: all .2s;
 
 }
 
 .filters__checkbox-container.active{
-    /* visibility: hidden; */
-    flex-grow: 0;
+    visibility: hidden;
+    transform: scaleY(0);
     transform-origin: top;
-    /* display: none; */
+    display: none;
     
 }
 
