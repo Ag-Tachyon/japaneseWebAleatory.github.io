@@ -76,10 +76,10 @@
     }
 }
 
-.icon-arrow{
-    transition: all .2s;
-}
+/* .icon-arrow{
+    transition: transform .3s ease;
+} */
 
 .icon-arrow.active{
-    transform: rotate(-90deg);
+    transform: rotate(-180deg);
 }
