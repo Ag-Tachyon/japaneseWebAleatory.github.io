@@ -3,6 +3,9 @@ import { crearElemento } from './dom.js';
 import { elegirAleatorio } from './aleatorio.js';
 import { crearTarjeta } from './tarjeta.js';
 
+const gruposActivos = () => Array.from(document.querySelectorAll('.filters__input:checked')).map(input => input.value);
+
+
 const tarjeta = crearTarjeta(document.querySelector('.caracter__container'));
 const btnContainer = document.querySelector('.btn-container');
 
@@ -14,7 +17,10 @@ const btnNext = crearElemento('button', { clases: ['button-primary'], texto: 'Si
 const btnSecond = crearElemento('button', { clases: ['button-second'], texto: 'Mostrar' });
 
 const siguiente = () => {
-    tarjeta.mostrar(elegirAleatorio(hiragana));
+    const activos = gruposActivos();
+    const disponibles = hiragana.filter(item => activos.includes(item.grupo));
+
+    tarjeta.mostrar(elegirAleatorio(disponibles));
     btnSecond.textContent = 'Mostrar';
 };
 
