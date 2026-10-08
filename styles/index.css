@@ -17,7 +17,7 @@
 
   /* Neutros Oscuros / Off-Blacks */
   --token-color-neutral-000: #ffffff;
-  --token-color-neutral-900: #121916; /* Negro carbón verdoso (Fondo principal) */
+  --token-color-neutral-900: #0c1210;; /* Negro carbón verdoso (Fondo principal) */
   --token-color-neutral-800: #1a2420; /* Superficie/Tarjeta en modo oscuro */
   --token-color-neutral-700: #25332d; /* Elevar elementos o hover sobre tarjetas */
 
@@ -93,6 +93,9 @@
   --noto-jp: "Noto Sans JP";
 }
 
+*{
+  outline: none;
+}
 
 /* ==========================================================================
    4. ESTILOS BASE Y COMPONENTES DE EJEMPLO

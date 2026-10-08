@@ -1,48 +1,34 @@
-import { hiragana } from "./bd.js";
-const containerCaracter = document.querySelector('.caracter__container')
-const btnContainer = document.querySelector('.btn-container')
+import { hiragana } from './bd.js';
+import { crearElemento } from './dom.js';
+import { elegirAleatorio } from './aleatorio.js';
+import { crearTarjeta } from './tarjeta.js';
 
-const pTag = document.createElement('p')
-pTag.classList.add('caracter__p')
+const tarjeta = crearTarjeta(document.querySelector('.caracter__container'));
+const btnContainer = document.querySelector('.btn-container');
 
-const btnNext = document.createElement('button')
-btnNext.classList.add('button-primary')
-btnNext.textContent = 'Siguiente';
+const btnActiveFilters = document.getElementById('btnFiltros');
+const arrowIcon = document.getElementById('arrowIcon');
+const checkBoxContainer = document.querySelector('.filters__checkbox-container');
 
-const caracterNamePTag = document.createElement('p')
-caracterNamePTag.classList.add('romaji-p')
-caracterNamePTag.classList.add('hidden')
+const btnNext = crearElemento('button', { clases: ['button-primary'], texto: 'Siguiente' });
+const btnSecond = crearElemento('button', { clases: ['button-second'], texto: 'Mostrar' });
 
-const btnSecond = document.createElement('button')
-btnSecond.classList.add('button-second')
-btnSecond.textContent = 'Mostrar'
-
-let numRandomFunction = ()=> {
-    let numRandom = Math.random() * hiragana.length;
-    let numSelected = Math.round(numRandom);
-    
-    pTag.textContent = hiragana[numSelected].caracter; // Colocamos el valor acá mismo porque el eventListener NO retorna un valo como tal para poder asignar al valor más adelante
-    caracterNamePTag.textContent = hiragana[numSelected].romaji;
-
-    caracterNamePTag.classList.add('hidden');
+const siguiente = () => {
+    tarjeta.mostrar(elegirAleatorio(hiragana));
     btnSecond.textContent = 'Mostrar';
-}
+};
 
-let showRomaji = ()=> {
-    caracterNamePTag.classList.toggle('hidden')
-    btnSecond.textContent = caracterNamePTag.classList.contains('hidden') ? 'Mostrar' : 'Ocultar'
-}
+btnNext.addEventListener('click', siguiente);
 
-btnNext.addEventListener('click' , numRandomFunction)
-btnSecond.addEventListener('click' , showRomaji)
+btnSecond.addEventListener('click', () => {
+    const oculto = tarjeta.alternarRomaji();
+    btnSecond.textContent = oculto ? 'Mostrar' : 'Ocultar';
+});
 
-containerCaracter.prepend(caracterNamePTag)
+btnContainer.append(btnNext, btnSecond);
+siguiente();
 
-
-numRandomFunction() // La llamamos acá para que no inicie vacío el contenido del p
- 
- 
-btnContainer.append(btnNext)
-btnContainer.append(btnSecond)
-containerCaracter.append(pTag)
-
+btnActiveFilters.addEventListener('click' , ()=>{
+    arrowIcon.classList.toggle('active')
+    checkBoxContainer.classList.toggle('active')
+})
